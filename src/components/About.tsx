@@ -1,28 +1,39 @@
-// components/About.js
 import React from 'react';
-import { Users, MapPin, Award, UserCheck, TargetIcon, HandshakeIcon } from 'lucide-react';
+import { Users, MapPin, Award, UserCheck, Target, Hand } from 'lucide-react';
 
-const About = () => {
-  const stats = [
+interface Stat {
+  icon: React.ReactNode;
+  value: string;
+  label: string;
+}
+
+interface Value {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+const About: React.FC = () => {
+  const stats: Stat[] = [
     { icon: <Users />, value: "193", label: "Employees" },
     { icon: <MapPin />, value: "10+", label: "Locations" },
     { icon: <Award />, value: "15", label: "Awards Winning" },
     { icon: <UserCheck />, value: "700000", label: "Customers" }
   ];
 
-  const values = [
+  const values: Value[] = [
     {
-      icon: <TargetIcon />,
+      icon: <Target />,
       title: "Our Vision",
       description: "We're a values-driven bank committed to financing a brighter, greener, and more sustainable future."
     },
     {
-      icon: <TargetIcon />,
+      icon: <Target />,
       title: "Our Mission",
       description: "We strive to accelerate progress toward a low-carbon economy and drive prosperity through sustainable financing."
     },
     {
-      icon: <HandshakeIcon />,
+      icon: <Hand />,
       title: "Our Promise",
       description: "To be a trusted lender that moves as fast and as smart as you do."
     }

@@ -1,20 +1,26 @@
 import React from 'react';
-import { Eye, TargetIcon, HandshakeIcon } from 'lucide-react';
+import { Eye, Target, Hand } from 'lucide-react';
+
+interface Value {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
 
 const WhyChoose: React.FC = () => {
-  const values = [
+  const values: Value[] = [
     {
       icon: <Eye />,
       title: "Our Vision",
       description: "We're a values-driven bank committed to financing a brighter, greener, and more sustainable future."
     },
     {
-      icon: <TargetIcon />,
+      icon: <Target />,
       title: "Our Mission",
       description: "We strive to accelerate progress toward a low-carbon economy and drive prosperity through sustainable financing."
     },
     {
-      icon: <HandshakeIcon />,
+      icon: <Hand />,
       title: "Our Promise",
       description: "To be a trusted lender that moves as fast and as smart as you do."
     }

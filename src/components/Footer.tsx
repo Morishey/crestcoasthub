@@ -1,12 +1,16 @@
-// components/Footer.js
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 
-const Footer = () => {
-  const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+interface QuickLink {
+  label: string;
+  section: string;
+}
 
-  const handleSubmit = (e) => {
+const Footer: React.FC = () => {
+  const [email, setEmail] = useState<string>('');
+  const [submitted, setSubmitted] = useState<boolean>(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (email) {
       setSubmitted(true);
@@ -17,7 +21,7 @@ const Footer = () => {
     }
   };
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string): void => {
     const element = document.getElementById(sectionId);
     if (element) {
       const offset = 80;
@@ -29,14 +33,14 @@ const Footer = () => {
     }
   };
 
-  const quickLinks = [
+  const quickLinks: QuickLink[] = [
     { label: 'Personal Banking', section: 'personal' },
     { label: 'Business Banking', section: 'business' },
     { label: 'Lending Solutions', section: 'lending' },
     { label: 'About Us', section: 'about' },
   ];
 
-  const products = [
+  const products: string[] = [
     'Secure Large Deposits',
     'Business Credit Cards',
     'Treasury Services',
